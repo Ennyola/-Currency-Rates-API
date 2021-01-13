@@ -1,0 +1,20 @@
+{
+    "name": "enyataassesment",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "node app.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "axios": "^0.21.1",
+        "express": "^4.17.1",
+        "joi": "^17.3.0",
+        "node-fetch": "^2.6.1",
+        "nodemon": "^2.0.7"
+    }
+}
