@@ -23,10 +23,20 @@ app.get("/", (req, res) => {
 app.get("/api/rates", (req, res) => {
     const { base, currency } = req.query
     const { error } = schema.validate(req.query)
+    if (!base) {
+        return res.status(400).json("Please enter a base currency in your query");
+
+    }
+    if (!currency) {
+        return res.status(400).json("Please Include currency query string");
+
+    }
     const currencyList = currency.split(",")
 
+
+
     if (error) return res.status(400).json(error.details[0].message)
-    if (!currencies.includes(base)) return res.status(400).json("Please Select a valid base currency")
+    if (!currencies.includes(base)) return res.status(400).json("Please Select a valid base currency in your query")
 
     for (letter of currency) {
         if (letter !== letter.toUpperCase()) return res.status(400).json("All currency query string must be in UpperCase")
